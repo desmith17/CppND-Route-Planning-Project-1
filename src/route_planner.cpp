@@ -63,7 +63,7 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 
 RouteModel::Node *RoutePlanner::NextNode() {
     // Reference: https://stackoverflow.com/questions/14419520/sort-vector-of-vectors
-    // Sort open list where the vector goes from highest to lowest sum
+    // Sort open list where the vector goes from lowest to highest sum
     std::sort(open_list.begin(),open_list.end(),[](const auto & n1,const auto & n2){return (n1->g_value+n1->h_value) < (n2->g_value+n2->h_value);});
     // Point to the first node in the vector
     RouteModel::Node* pointer_ls = open_list.front();
